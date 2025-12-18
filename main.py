@@ -49,7 +49,7 @@ def root():
 @app.get("/version")
 def version():
     return {
-        "version": "1.0.3",
+        "version": "1.0.4",
         "app": "API eCommerce UTEQ",
         "deployed_at": "2025-12-18 22:30:00",
         "status": "running",
