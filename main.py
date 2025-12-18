@@ -5,6 +5,7 @@ import subprocess
 import hmac
 import hashlib
 import os
+from datetime import datetime
 
 from database import engine, Base, SessionLocal
 from models import Producto
@@ -43,6 +44,17 @@ app.include_router(router)
 @app.get("/")
 def root():
     return {"message": "API eCommerce 2025"}
+
+# NUEVO ENDPOINT - Agregar esto
+@app.get("/version")
+def version():
+    return {
+        "version": "1.0.1",
+        "app": "API eCommerce UTEQ",
+        "deployed_at": "2025-12-18 22:30:00",
+        "status": "running",
+        "environment": "production"
+    }
 
 
 # ====== WEBHOOK PARA AUTO-DESPLIEGUE ======
